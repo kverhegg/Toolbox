@@ -18,7 +18,7 @@ import java.util.Objects;
  */
 public class Main {
 
-    private static final JsonConverter jsonConverter = new SearchParameterConverter();
+    private static final DefaultJsonConverter jsonConverter = new SearchParameterConverter();
 
     public static void main(String[] args) throws IOException, FileNotFoundException, ClassNotFoundException {
         //loading the initial file

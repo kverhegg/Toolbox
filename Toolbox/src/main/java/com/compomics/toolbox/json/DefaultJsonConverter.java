@@ -20,7 +20,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public abstract class JsonConverter {
+public class DefaultJsonConverter {
 
     /**
      * a GSON parser instance to convert json to java objects and back
@@ -35,7 +35,7 @@ public abstract class JsonConverter {
     /**
      * Default constructor
      */
-    public JsonConverter() {
+    public DefaultJsonConverter() {
         this.builder = new GsonBuilder();
         gson = builder.create();
     }
@@ -45,7 +45,7 @@ public abstract class JsonConverter {
      * @param interfaces comma separated list of interfaces that this class is
      * using. They will automatically be added using a custom InterfaceAdapter
      */
-    public JsonConverter(Class... interfaces) {
+    public DefaultJsonConverter(Class... interfaces) {
         this.builder = new GsonBuilder();
         //register required interfaceAdapters
         for (Class aClass : interfaces) {

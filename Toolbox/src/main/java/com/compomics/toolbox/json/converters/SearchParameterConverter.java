@@ -9,11 +9,11 @@ package com.compomics.toolbox.json.converters;
  *
  * @author Kenneth
  */
-import com.compomics.toolbox.json.JsonConverter;
+import com.compomics.toolbox.json.DefaultJsonConverter;
 import com.compomics.util.experiment.biology.Atom;
 import com.compomics.util.experiment.identification.identification_parameters.IdentificationAlgorithmParameter;
 
-public class SearchParameterConverter extends JsonConverter {
+public class SearchParameterConverter extends DefaultJsonConverter {
 
     public SearchParameterConverter() {
         super(IdentificationAlgorithmParameter.class, Atom.class);
