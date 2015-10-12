@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.compomics.toolbox.json.adapter;
 
 import com.google.gson.JsonDeserializationContext;
@@ -15,8 +10,8 @@ import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 
 /**
- *
- * @author Kenneth
+ * A generic adapter to parse used interfaces in a class
+ * @author Kenneth Verheggen
  */
 public class InterfaceAdapter<T> implements JsonSerializer<T>, JsonDeserializer<T> {
 
