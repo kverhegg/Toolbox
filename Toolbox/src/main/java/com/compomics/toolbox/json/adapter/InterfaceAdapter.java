@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.compomics.toolbox.json;
+package com.compomics.toolbox.json.adapter;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -14,14 +14,19 @@ import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 import java.lang.reflect.Type;
 
-
-
 /**
  *
  * @author Kenneth
  */
 public class InterfaceAdapter<T> implements JsonSerializer<T>, JsonDeserializer<T> {
 
+    /**
+     *
+     * @param object the input object
+     * @param interfaceType the class of the interface
+     * @param context the serialization context for the json parser
+     * @return a serialized version of the object as a JsonElement
+     */
     @Override
     public JsonElement serialize(T object, Type interfaceType, JsonSerializationContext context) {
         final JsonObject wrapper = new JsonObject();
@@ -30,6 +35,13 @@ public class InterfaceAdapter<T> implements JsonSerializer<T>, JsonDeserializer<
         return wrapper;
     }
 
+    /**
+     *
+     * @param elem a serialized version of the object as a JsonElement
+     * @param interfaceType the class of the interface
+     * @param context the deserialization context for the json parser
+     * @return an object of the interface type
+     */
     @Override
     public T deserialize(JsonElement elem, Type interfaceType, JsonDeserializationContext context) throws JsonParseException {
         final JsonObject wrapper = (JsonObject) elem;
@@ -50,7 +62,7 @@ public class InterfaceAdapter<T> implements JsonSerializer<T>, JsonDeserializer<
     private JsonElement get(final JsonObject wrapper, String memberName) {
         final JsonElement elem = wrapper.get(memberName);
         if (elem == null) {
-            throw new JsonParseException("no '" + memberName + "' member found in what was expected to be an interface wrapper");
+            throw new JsonParseException("No '" + memberName + "' member found in what was expected to be an interface wrapper");
         }
         return elem;
     }
