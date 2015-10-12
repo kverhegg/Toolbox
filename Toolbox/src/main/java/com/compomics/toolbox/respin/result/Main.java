@@ -6,9 +6,10 @@
 package com.compomics.toolbox.respin.result;
 
 import com.compomics.toolbox.respin.result.collator.AbstractCollator;
-import com.compomics.toolbox.respin.result.collator.impl.SequenceCollator;
+import com.compomics.toolbox.respin.result.collator.impl.SpecificEvidenceCollator;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -17,9 +18,13 @@ import java.io.IOException;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-        File inputFolder = new File("C:\\Users\\Kenneth\\Desktop\\Requests\\Gerben\\smORF_reports_OKT_2015\\sorfs_psm_corr");
-        File outputFile = new File(inputFolder.getParentFile(), inputFolder.getName() + "_sequences.tsv");
-        AbstractCollator collator = new SequenceCollator();
+        ArrayList<String> identifiers = new ArrayList<>();
+        identifiers.add("Q8NCU8");
+        identifiers.add("P02768");
+        
+        File inputFolder = new File("C:\\Users\\Kenneth\\Desktop\\Requests\\Gerben\\isoforms_12_okt_psm");
+        File outputFile = new File(inputFolder.getParentFile(), inputFolder.getName() + "_evidence.tsv");
+        AbstractCollator collator = new SpecificEvidenceCollator(identifiers);
         collator.collate(outputFile, inputFolder);
     }
 }

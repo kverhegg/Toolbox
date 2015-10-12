@@ -1,13 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.compomics.toolbox.json;
 
 /**
  *
- * @author Kenneth
+ * @author Kenneth Verheggen
  */
 import com.compomics.toolbox.json.adapter.InterfaceAdapter;
 import com.google.gson.Gson;
@@ -20,6 +15,10 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+/**
+ * This class is intended to convert objects to the json format and vice versa
+ * 
+*/
 public class DefaultJsonConverter {
 
     /**
