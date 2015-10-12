@@ -31,6 +31,7 @@ public class SpecificEvidenceCollator extends EvidenceCollator {
             System.out.println("Writing evidence to file...");
             out.append(getHeaders()).append(System.lineSeparator()).flush();
             for (SequenceEvidence evidence : reader.readFiles(inputFolder).values()) {
+                System.out.println(evidence.getIdentifier());
                 if (proteinAccessionsToMonitor.contains(evidence.getIdentifier())) {
                     out.append(evidence.toString()).append(System.lineSeparator()).flush();
                 }

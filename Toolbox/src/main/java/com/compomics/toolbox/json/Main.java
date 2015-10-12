@@ -18,6 +18,7 @@ public class Main {
         //loading the initial file
         ClassLoader classLoader = Main.class.getClassLoader();
         File parameterFile = new File(classLoader.getResource("tutorial.par").getFile());
+        parameterFile = new File("C:\\Users\\Kenneth\\Desktop\\Requests\\Harald Barsnes\\JSON\\tutorial.par");
         //create the original search parameters
         SearchParameters originalParameters = SearchParameters.getIdentificationParameters(parameterFile);
         //convert the parameters and save to a file

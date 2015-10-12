@@ -20,7 +20,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ArrayList<String> identifiers = new ArrayList<>();
         identifiers.add("Q8NCU8");
-        identifiers.add("P02768");
+        identifiers.add("Q56G89");
         
         File inputFolder = new File("C:\\Users\\Kenneth\\Desktop\\Requests\\Gerben\\isoforms_12_okt_psm");
         File outputFile = new File(inputFolder.getParentFile(), inputFolder.getName() + "_evidence.tsv");

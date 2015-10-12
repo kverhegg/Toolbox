@@ -100,7 +100,7 @@ public class DefaultJsonConverter {
         return gson.fromJson(jsonString, objectType);
     }
 
-    private String getJsonStringFromFile(File jsonFile) throws FileNotFoundException, IOException {
+    protected String getJsonStringFromFile(File jsonFile) throws FileNotFoundException, IOException {
         StringBuilder stringBuilder = new StringBuilder();
         BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(jsonFile)));
         String line;
